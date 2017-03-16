@@ -1,0 +1,72 @@
+<html><head><meta charset="utf-8"><style>body { font-family: Arial; }ul { list-style-position: inside; }span.passed { padding: 0 1em; color: green; }span.failed { padding: 0 1em; color: red; }span.pending { padding: 0 1em; color: orange; }span.stacktrace { white-space: pre; border: 1px solid rgb(0, 0, 0); font-size: 9pt; padding: 4px; background-color: rgb(204, 204, 204); }</style><script type="text/javascript">function showhide(id) {var e = document.getElementById(id);e.style.display = (e.style.display == "block") ? "none" : "block";}function buildQuickLinks() {var failedSpecs = document.querySelectorAll("li.failed");var quickLinksContainer = document.getElementById("quickLinks");if (!quickLinksContainer) return;for (var i = 0; i < failedSpecs.length; ++i) {var li = document.createElement("li");var a = document.createElement("a");a.href = "#" + failedSpecs[i].id;a.textContent = failedSpecs[i].dataset.name + "  (" + failedSpecs[i].dataset.browser + ")";li.appendChild(a);quickLinksContainer.appendChild(li);}}function updatePassCount() {var totalPassed = document.querySelectorAll("li.passed").length;var totalFailed = document.querySelectorAll("li.failed").length;var totalSpecs = totalFailed + totalPassed;console.log("passed: %s, failed: %s, total: %s", totalPassed, totalFailed, totalSpecs);document.getElementById("summaryTotalSpecs").textContent = document.getElementById("summaryTotalSpecs").textContent + totalSpecs;document.getElementById("summaryTotalFailed").textContent = document.getElementById("summaryTotalFailed").textContent + totalFailed;if (totalFailed) {document.getElementById("summary").className = "failed";}}function start() {updatePassCount();buildQuickLinks();}window.onload = start;</script></head><body><h1>Snow Test Cases</h1><div id="summary" class="passed"><h4>Summary</h4><ul><li id="summaryTotalSpecs">Total specs tested: </li><li id="summaryTotalFailed">Total failed: </li></ul><ul id="quickLinks"></ul></div><ul style="list-style-type:none"><h4>UI TEST FOR SNOW (0.438 s)</h4><li id="e16671a0-09fe-11e7-b38b-171a2d422c0a" class="failed" data-spec="spec0" data-name="should have a title" data-browser="chrome"><span class="failed">&#10007;</span><a href="chrome/UI TEST FOR SNOW should have a title.png">should have a title</a>(0.072 s)<ul><li>Failed: getTitle is not defined [<a href="javascript:showhide('spec0-XP-chrome-56.0.2924.870')">stack</a>]<br/><span style="display: none" id="spec0-XP-chrome-56.0.2924.870" class="stacktrace">ReferenceError: getTitle is not defined
+    at ArpHomepage.getTitle1 (C:\Users\shawo\Desktop\Protractot-Page Object\spec.js:14:12)
+    at Object.&lt;anonymous&gt; (C:\Users\shawo\Desktop\Protractot-Page Object\spec.js:29:24)
+    at C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:110:25
+    at new ManagedPromise (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1067:7)
+    at ControlFlow.promise (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2396:12)
+    at schedulerExecute (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2970:14)
+    at TaskQueue.executeNext_ (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2953:27)
+    at asyncRun (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2813:27)
+    at C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:676:7
+From: Task: Run it(&quot;should have a title&quot;) in control flow
+    at Object.&lt;anonymous&gt; (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attemptAsync (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1980:24)
+    at QueueRunner.run (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1935:9)
+    at QueueRunner.execute (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1923:10)
+    at Spec.queueRunnerFactory (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:714:35)
+    at Spec.execute (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:371:10)
+    at Object.fn (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:2579:37)
+    at attemptAsync (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1980:24)
+    at QueueRunner.run (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1935:9)
+    at QueueRunner.execute (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1923:10)
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (C:\Users\shawo\Desktop\Protractot-Page Object\spec.js:26:3)
+    at addSpecsToSuite (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:867:25)
+    at Env.describe (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:836:7)
+    at describe (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (C:\Users\shawo\Desktop\Protractot-Page Object\spec.js:18:1)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)</span></li></ul></li><li id="e16698b0-09fe-11e7-b38b-171a2d422c0a" class="failed" data-spec="spec1" data-name="should write in text box" data-browser="chrome"><span class="failed">&#10007;</span><a href="chrome/UI TEST FOR SNOW should write in text box.png">should write in text box</a>(0.315 s)<ul><li>Failed: Error while waiting for Protractor to sync with the page: &quot;window.angular is undefined.  This could be either because this is a non-angular page or because your test involves client-side navigation, which can interfere with Protractor&#39;s bootstrapping.  See http://git.io/v4gXM for details&quot; [<a href="javascript:showhide('spec1-XP-chrome-56.0.2924.870')">stack</a>]<br/><span style="display: none" id="spec1-XP-chrome-56.0.2924.870" class="stacktrace">Error: Error while waiting for Protractor to sync with the page: &quot;window.angular is undefined.  This could be either because this is a non-angular page or because your test involves client-side navigation, which can interfere with Protractor&#39;s bootstrapping.  See http://git.io/v4gXM for details&quot;
+    at runWaitForAngularScript.then (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\lib\browser.ts:652:19)
+    at ManagedPromise.invokeCallback_ (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1366:14)
+    at TaskQueue.execute_ (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2970:14)
+    at TaskQueue.executeNext_ (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2953:27)
+    at asyncRun (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2813:27)
+    at C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:676:7
+    at process._tickCallback (internal/process/next_tick.js:103:7)Error
+    at ElementArrayFinder.applyAction_ (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\lib\element.ts:482:23)
+    at ElementArrayFinder.(anonymous function) [as sendKeys] (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\lib\element.ts:96:21)
+    at ElementFinder.(anonymous function) [as sendKeys] (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\lib\element.ts:873:14)
+    at Object.&lt;anonymous&gt; (C:\Users\shawo\Desktop\Protractot-Page Object\spec.js:33:17)
+    at C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:110:25
+    at new ManagedPromise (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1067:7)
+    at ControlFlow.promise (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2396:12)
+    at schedulerExecute (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2970:14)
+    at TaskQueue.executeNext_ (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2953:27)
+From: Task: Run it(&quot;should write in text box&quot;) in control flow
+    at Object.&lt;anonymous&gt; (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attemptAsync (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1980:24)
+    at QueueRunner.run (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1935:9)
+    at QueueRunner.execute (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1923:10)
+    at Spec.queueRunnerFactory (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:714:35)
+    at Spec.execute (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:371:10)
+    at Object.fn (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:2579:37)
+    at attemptAsync (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1980:24)
+    at QueueRunner.run (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1935:9)
+    at C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1962:16
+From asynchronous test: 
+Error
+    at Suite.&lt;anonymous&gt; (C:\Users\shawo\Desktop\Protractot-Page Object\spec.js:32:3)
+    at addSpecsToSuite (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:867:25)
+    at Env.describe (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:836:7)
+    at describe (C:\Users\shawo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:3576:18)
+    at Object.&lt;anonymous&gt; (C:\Users\shawo\Desktop\Protractot-Page Object\spec.js:18:1)
+    at Module._compile (module.js:570:32)
+    at Object.Module._extensions..js (module.js:579:10)
+    at Module.load (module.js:487:32)
+    at tryModuleLoad (module.js:446:12)</span></li></ul></li></ul><a href="javascript:showhide('e166e6d0-09fe-11e7-b38b-171a2d422c0a')">Toggle Configuration</a><div class="config" id="e166e6d0-09fe-11e7-b38b-171a2d422c0a" style="display: none"><h4>Configuration</h4><li>Jasmine version:  2.5.2</li><li>Browser name:  chrome</li><li>Browser version:  56.0.2924.87</li><li>Platform:  XP</li><li>Javascript enabled:  true</li><li>Css selectors enabled:  true</li><li>logBrowserConsoleOnFailure:  true</li></div></body></html>
